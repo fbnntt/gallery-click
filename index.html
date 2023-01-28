@@ -24,7 +24,7 @@
   <body 
     class="relative max-w-[1000px] mx-auto px-[20px] py-[100px]"
     x-data="{
-      
+      showModal: false
     }"  
   >
 
@@ -40,7 +40,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -60,7 +60,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -80,7 +80,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -92,7 +92,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -106,7 +106,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -124,7 +124,7 @@
             alt="" 
             data-slide
             x-data
-            @click="$dispatch('show-modal')"
+            @click="showModal = true"
             class="w-full h-full object-cover"
           >
         </div>
@@ -134,10 +134,7 @@
 
     <!-- MODAL -->
     <section
-      x-data="{
-        showModal: false
-      }"
-      @show-modal.window="showModal = true"
+      x-show="showModal"
       class="fixed inset-0 w-full h-full transition duration-200 bg-black/[.75] z-[20] hidden lg:block overflow-y-scroll"
       :class="{
         'opacity-0 pointer-events-none ' : showModal === false,
