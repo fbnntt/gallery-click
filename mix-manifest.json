@@ -1,7 +1,4 @@
 {
     "/assets/main.min.js": "/assets/main.min.js",
-    "/assets/main.min.css": "/assets/main.min.css",
-    "/assets/images/Image.jpg": "/assets/images/Image.jpg",
-    "/assets/images/collection.jpg": "/assets/images/collection.jpg",
-    "/assets/images/featured-product.jpg": "/assets/images/featured-product.jpg"
+    "/assets/main.min.css": "/assets/main.min.css"
 }

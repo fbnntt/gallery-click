@@ -6,6 +6,7 @@
   — Carousel opens on image selected (by index clicked)
   — Arrows are available to continue navigating prev/next through slides
   —— Slides are ordered same as the order on main page
+
 -->
 
 <!DOCTYPE html>
@@ -20,93 +21,114 @@
     <link rel="stylesheet" href="assets/main.min.css">
   </head>
 
-  <body class="relative max-w-[900px] mx-auto py-[100px]">
+  <body 
+    class="relative max-w-[1000px] mx-auto px-[20px] py-[100px]"
+    x-data="{
+      
+    }"  
+  >
 
     <!-- MAIN CONTENT -->
-    <main class="grid grid-cols-12 items-center gap-[20px]"> 
-      <div class="col-span-full h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 1 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/1000" 
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
-
-      <div class="col-span-full text-center">
-        Some text here to split up the content blocks
-      </div>
-
-      <div class="col-span-full h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 2 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/1200" 
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
-
-      <div class="col-span-full text-center">
-        Some text here to split up the content blocks
-      </div>
-
-      <div class="col-span-6 h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 3 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/300" 
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
+    <main 
+      class=""
+    > 
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-full h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 1 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/1000" 
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+      </section>
       
-      <div class="col-span-6 h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 4 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/800" 
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-full text-center">
+          Some text here to split up the content blocks
+        </div>
+      </section>
 
-      <div class="col-span-6 h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 5 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/600"
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-full h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 2 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/1200" 
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+      </section>
+      
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-full text-center">
+          Some text here to split up the content blocks
+        </div>
+      </section>
 
-      <div class="col-span-6 text-center">
-        Some text here to split up the content blocks
-      </div>
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-6 h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 3 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/300" 
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+        
+        <div class="col-span-6 h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 4 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/800" 
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+      </section>
 
-      <div class="col-span-full h-[350px] overflow-hidden">
-        <!-- Click this to make modal carousel go to index 6 -->
-        <img 
-          src="https://source.unsplash.com/collection/3493233/1500" 
-          alt="" 
-          data-slide
-          x-data
-          @click="$dispatch('show-modal')"
-          class="w-full h-full object-cover"
-        >
-      </div>
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-6 h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 5 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/600"
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+  
+        <div class="col-span-6 text-center">
+          Some text here to split up the content blocks
+        </div>
+      </section>
+      
+      <section class="grid grid-cols-12 items-center gap-[20px] my-[20px]">
+        <div class="col-span-full h-[350px] overflow-hidden">
+          <!-- Click this to make modal carousel go to index 6 -->
+          <img 
+            src="https://source.unsplash.com/collection/3493233/1500" 
+            alt="" 
+            data-slide
+            x-data
+            @click="$dispatch('show-modal')"
+            class="w-full h-full object-cover"
+          >
+        </div>
+      </section>
     </main>
 
 
@@ -116,7 +138,7 @@
         showModal: false
       }"
       @show-modal.window="showModal = true"
-      class="fixed inset-0 w-full h-full transition duration-200 bg-black/[.50] z-[20] hidden lg:block overflow-y-scroll"
+      class="fixed inset-0 w-full h-full transition duration-200 bg-black/[.75] z-[20] hidden lg:block overflow-y-scroll"
       :class="{
         'opacity-0 pointer-events-none ' : showModal === false,
         'opacity-100 pointer-events-auto' : showModal === true,
@@ -132,7 +154,6 @@
         
         <!-- CAROUSEL -->
         <div>
-
         </div>
 
       </div>
