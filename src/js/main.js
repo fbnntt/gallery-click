@@ -9,7 +9,7 @@ components.keys().map((key) => {
   Alpine.data(name, components(key).default);
 });
 
-Alpine.start()
+Alpine.start();
 
 window.addEventListener("DOMContentLoaded", () => {
   reveal({
@@ -18,5 +18,4 @@ window.addEventListener("DOMContentLoaded", () => {
       rootMargin: "0px 0px -25% 0px",
     },
   });
-})
-
+});

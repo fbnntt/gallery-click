@@ -7,6 +7,9 @@ mix
   .options({
     processCssUrls: false,
     sourcemaps: false,
+    terser: {
+      extractComments: false
+    }
   })
 
   .js("src/js/main.js", "assets/main.min.js")
