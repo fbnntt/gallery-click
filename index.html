@@ -16,7 +16,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="origin-when-cross-origin">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
     <script src="assets/main.min.js" defer></script>
     <link rel="stylesheet" href="assets/main.min.css">
   </head>
@@ -26,6 +29,15 @@
     x-data="{
       showModal: false,
     }"  
+    x-init="() => {
+      const slider = new Splide($refs.carousel, {
+        perPage: 1,
+        gap: 40
+      }).mount()
+      window.addEventListener('slidechange', e => {
+        slider.go(e.detail)
+      })
+    }"
   >
 
     <!-- MAIN CONTENT -->
@@ -40,7 +52,7 @@
             alt="" 
             data-slide
             x-data
-            @click="showModal = true"
+            @click="showModal = true; $dispatch('slidechange', 0)"
             class="w-full h-full object-cover"
           >
         </div>
@@ -60,7 +72,7 @@
             alt="" 
             data-slide
             x-data
-            @click="showModal = true"
+            @click="showModal = true; $dispatch('slidechange', 1)"
             class="w-full h-full object-cover"
           >
         </div>
@@ -80,7 +92,7 @@
             alt="" 
             data-slide
             x-data
-            @click="showModal = true"
+            @click="showModal = true; $dispatch('slidechange', 2)"
             class="w-full h-full object-cover"
           >
         </div>
@@ -134,14 +146,14 @@
 
     <!-- MODAL -->
     <section
-      class="fixed inset-0 w-full h-full transition duration-200 bg-black/[.75] z-[20] hidden lg:block overflow-y-scroll"
+      class="fixed inset-0 w-full h-full transition duration-200 bg-black/[.75] z-[20] flex overflow-y-scroll"
       :class="{
         'opacity-0 pointer-events-none ' : showModal === false,
         'opacity-100 pointer-events-auto' : showModal === true,
       }"
       x-cloak
     >
-      <div class="relative w-full h-full">
+      <div class="relative w-[80%] h-[80%] m-auto">
         <button type="button" class="absolute top-[10px] right-[10px] p-[5px] text-white z-[20]"
           @click="showModal = false"
         >
@@ -158,7 +170,7 @@
         >
           <div class="splide__track overflow-visible">
             <div class="splide__list flex">
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/1000" 
                   alt=""
@@ -166,7 +178,7 @@
                 >
               </div>
 
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/1200" 
                   alt="" 
@@ -174,7 +186,7 @@
                 >
               </div>
               
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/300" 
                   alt="" 
@@ -182,7 +194,7 @@
                 >
               </div>
 
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/800" 
                   alt="" 
@@ -190,7 +202,7 @@
                 >
               </div>
 
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/600"
                   alt="" 
@@ -198,7 +210,7 @@
                 >
               </div>
 
-              <div classes="splide__slide w-full flex-shrink-0 mr-[15px]">
+              <div class="splide__slide">
                 <img 
                   src="https://source.unsplash.com/collection/3493233/1500" 
                   alt="" 
